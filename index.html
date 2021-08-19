@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+
+    <el-container>
+      <!-- タイトル -->
+      <el-header>Qiita過去10,000記事の書籍ランキング</el-header>
+      <!-- サイドバー -->
+      <el-container>
+        <el-aside>
+          <el-menu
+          default-active="1"
+          class="el-menu-vertical-demo"
+          >
+            <el-menu-item index="1">
+              <span>メンション数順</span>
+            </el-menu-item>
+            <el-menu-item index="2">
+              <span>ポイント順</span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <span>最近の流行り</span>
+            </el-menu-item>
+            <el-menu-item index="4">
+              <span>昔からある書籍</span>
+            </el-menu-item>
+          </el-menu>
+        </el-aside>
+        <!-- メインの書籍リスト -->
+        <el-main>
+
+          <el-row>
+            <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 2 : 0">
+              <el-card :body-style="{ padding: '0px' }">
+                <a href="https://www.amazon.co.jp/gp/product/B082SN87QP?ie=UTF8&linkCode=li2&tag=qiita-book-ranking-22&linkId=e9a4d2f276fbbf120348e3af2b935482&language=ja_JP&ref_=as_li_ss_il" target="_blank"><img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B082SN87QP&Format=_SL160_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=qiita-book-ranking-22&language=ja_JP" ></a><img src="https://ir-jp.amazon-adsystem.com/e/ir?t=qiita-book-ranking-22&language=ja_JP&l=li2&o=9&a=B082SN87QP" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+                <div style="padding: 14px;">
+                  <p>Qiita記事へのリンク</p>
+                  <p>Qiita記事へのリンク</p>
+                  <p>Qiita記事へのリンク</p>
+                    <el-button type="text" class="button">Operating</el-button>
+                  </div>
+                </div>
+              </el-card>
+            </el-col>
+          </el-row>
+
+        </el-main>
+      </el-container>
+    </el-container>
+
+
+  </div>
+</body>
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { visible: false }
+      }
+    })
+  </script>
+
+<style>
+  .el-header, .el-footer {
+    background-color: #B3C0D1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+  }
+
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    /* line-height: 160px; */
+  }
+
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+
+  .el-container:nth-child(5) .el-aside,
+  .el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+  }
+
+  .el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+  }
+
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+
+  .clearfix:after {
+      clear: both
+  }
+
+
+</style>
+
+
+</html>
+
+
+Resources
